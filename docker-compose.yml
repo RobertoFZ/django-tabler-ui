@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile-pg
+    image: postgres
+    container_name: django_app_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: ${DB_NAME:-price_engine}
+      POSTGRES_USER: ${DB_USER:-price_engine}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-root}
+  web:
+    container_name: django_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bash -c "pip install -r requirements.txt && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:

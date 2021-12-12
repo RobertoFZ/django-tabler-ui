@@ -1,0 +1,15 @@
+{% for field in form %}
+  {% if field.is_hidden %}
+    {{field}}
+  {% else %}
+    <div class="col-{{col|default:'3'}}">
+      {{field.label_tag}}
+      <div class="mb-3">
+        {{field}} 
+        {% if field.errors %}
+        <div class="text-danger fs-7">{{field.errors}}</div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+{% endfor %}

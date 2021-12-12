@@ -1,0 +1,39 @@
+{% load sass_tags %}
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+
+  <meta name="author" content="">
+  <title>Brain PROS - Price Revenue Optimization System</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="{% sass_src 'apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% sass_src 'favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% sass_src 'favicon-16x16.png' %}">
+  <link rel="manifest" href="{% sass_src 'site.webmanifest' %}">
+  <link rel="mask-icon" href="{% sass_src 'safari-pinned-tab.svg' %}" color="#85b43c">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <script src="{% sass_src 'index-bundle.js' %}" type="application/javascript"></script>
+  <link href="{% sass_src 'js/tabler.min.js' %}" rel="stylesheet" type="application/javascript" />
+  <link href="{% sass_src 'styles/app.scss' %}" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="antialiased border-top-wide border-primary d-flex flex-column">
+
+  {% block content %} {% endblock%}
+
+</body>
+
+</html>

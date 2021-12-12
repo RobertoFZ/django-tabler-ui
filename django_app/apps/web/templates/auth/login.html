@@ -1,0 +1,45 @@
+{% extends 'auth/auth_base.html' %}
+{% load sass_tags %}
+{% load django_bootstrap5 %}
+{% block content %}
+
+<div class="page page-center">
+  <div class="container-tight py-4">
+    <div class="text-center mb-4">
+      <a href="."><img src="{% sass_src 'assets/logo.png' %}" height="70" alt=""></a>
+    </div>
+    <form class="card card-md" method="post" autocomplete="off">
+      {% csrf_token %}
+      <div class="card-body">
+        <h2 class="card-title text-center mb-4">Por favor inicia sesión</h2>
+        {% bootstrap_messages %}
+        <div class="mb-3">
+          {{form.email.label_tag}}
+          {{form.email}}
+          {% if form.email.errors%}
+          <div class="text-danger fs-7">
+            {{form.email.errors}}
+          </div>
+          {% endif %}
+        </div>
+        <div class="mb-2">
+          {{form.password.label_tag}}
+          <div class="input-group input-group-flat">
+            {{form.password}}
+          </div>
+        </div>
+        <div class="mb-2">
+          <label class="form-check">
+            {{form.remember_me}}
+            <label class="form-check-label" for="rememberMe">Recordarme</label>
+          </label>
+        </div>
+        <div class="form-footer">
+          <button type="submit" class="btn btn-primary w-100">Iniciar sesión</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

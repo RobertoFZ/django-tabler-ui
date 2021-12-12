@@ -1,0 +1,55 @@
+{% load sass_tags %}
+{% load django_bootstrap5 %}
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+
+  <meta name="author" content="">
+  <title>Precios Dinámicos</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="{% sass_src 'apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% sass_src 'favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% sass_src 'favicon-16x16.png' %}">
+  <link rel="manifest" href="{% sass_src 'site.webmanifest' %}">
+  <link rel="mask-icon" href="{% sass_src 'safari-pinned-tab.svg' %}" color="#85b43c">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <script src="{% sass_src 'index-bundle.js' %}" type="application/javascript"></script>
+  <script href="{% sass_src 'js/tabler.min.js' %}" type="application/javascript" /></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+  <link href="{% sass_src 'styles/app.scss' %}" rel="stylesheet" type="text/css" />
+  {% block head %}{% endblock %}
+</head>
+
+<body class="bg-gray-100">
+  <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg">
+    {% block navbar %}
+    {% include 'navbar.html' %}
+    {% endblock %}
+
+    <div class="container py-4">
+      {% bootstrap_messages %}
+      {% block content %} {% endblock%}
+
+    </div>
+
+    {% include 'footer.html' %}
+  </main>
+</body>
+
+{% block scripts %}{% endblock %}
+
+</html>

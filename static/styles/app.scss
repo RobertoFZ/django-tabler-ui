@@ -1,0 +1,83 @@
+@import "variables";
+@import "node_modules/bootstrap/scss/bootstrap-grid";
+@import "node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+@import "node_modules/select2/src/scss/core";
+@import "tabler.min.css";
+
+.nav-pagination nav {
+  margin: auto;
+}
+
+.markdown > table > :not(caption) > * > *,
+.table > :not(caption) > * > * {
+  vertical-align: middle;
+}
+
+.form-control {
+  background-color: #ffffff;
+}
+
+.select2-selection {
+  -webkit-box-shadow: 0;
+  box-shadow: 0;
+  background-color: #fff;
+  border: 0;
+  border-radius: 0;
+  color: #555555;
+  font-size: 14px;
+  outline: 0;
+  min-height: 40px;
+  text-align: left;
+  margin-top: 5px;
+}
+
+.select2-selection__rendered {
+  margin: 5px;
+}
+
+.select2-selection__arrow {
+  margin: 10px 5px;
+}
+
+.select2-container .select2-selection--single .select2-selection__clear {
+  margin-top: 5px;
+  margin-right: 25px;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+.header-logo {
+  height: 3rem;
+  width: auto;
+}
+
+.footer-logo {
+  height: 4rem;
+  width: auto;
+}
+
+.center-provider-logo {
+  @include media-breakpoint-down(lg) {
+    width: 100%;
+    img {
+      margin: auto;
+    }
+  }
+}
+
+#sortable tr:hover {
+  background: rgba(0, 0, 0, 0.075);
+}
+
+#sortable tr td {
+  vertical-align: middle;
+  padding: 0.5rem 0.5rem;
+}
+
+.actionable {
+  &:hover {
+    cursor: pointer;
+  }
+}
