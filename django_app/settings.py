@@ -191,6 +191,7 @@ STATICFILES_FINDERS = [
 SASS_PROCESSOR_INCLUDE_DIRS = [
     os.path.join(BASE_DIR, 'node_modules'),
 ]
+
 SASS_PRECISION = 8
 
 STATIC_PATH = os.path.join(BASE_DIR, 'static')

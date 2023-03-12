@@ -7,6 +7,7 @@ window.select2 = require('select2/dist/js/select2.full');
 window.Sortable = require('sortablejs').Sortable;
 window.ApexCharts = require('apexcharts');
 require('./graphs');
+require('@tabler/core/dist/js/tabler');
 
 // This ensures that jQuery AJAX functions submit the CSRF token
 const getCookie = function (name) {
